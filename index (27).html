@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanrio Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Sanrio <em>Archive</em></div>
+  <nav>
+    <a href="#" class="active" id="nav-home" onclick="showPage('home',event)">Archive</a>
+    <a href="#" id="nav-saved" class="nav-saved" onclick="showPage('saved',event)">Saved <span id="saved-count"></span></a>
+    <a href="#" id="nav-about" onclick="showPage('about',event)">About</a>
+  </nav>
+</header>
+
+<div class="main-content" id="main-content">
+
+  <div class="hero">
+    <div class="hero-label">Character Archive · Sanrio Universe</div>
+    <h1 class="hero-title">Find your <em>character.</em></h1>
+    <p class="hero-desc">Browse the Sanrio universe by mood, type, and era. Save the ones that speak to you.</p>
+    <div class="hero-count">
+      <div class="hero-count-num">10</div>
+      <div class="hero-count-label">Characters</div>
+    </div>
+  </div>
+
+  <div class="filter-wrap">
+    <div class="filter-group">
+      <span class="filter-group-label">Mood</span>
+      <div class="filter-pills">
+        <button class="pill active" onclick="filterCards(this,'all')">All</button>
+        <button class="pill" onclick="filterCards(this,'dreamy')">Dreamy</button>
+        <button class="pill" onclick="filterCards(this,'cheerful')">Cheerful</button>
+        <button class="pill" onclick="filterCards(this,'calm')">Calm</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-group-label">Type</span>
+      <div class="filter-pills">
+        <button class="pill" onclick="filterCards(this,'animal')">Animal</button>
+        <button class="pill" onclick="filterCards(this,'fantasy')">Fantasy</button>
+        <button class="pill" onclick="filterCards(this,'food')">Food</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-group-label">Era</span>
+      <div class="filter-pills">
+        <button class="pill" onclick="filterCards(this,'classic')">Classic</button>
+        <button class="pill" onclick="filterCards(this,'modern')">Modern</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="archive" id="card-grid">
+
+    <div class="card" data-tags="dreamy animal classic" data-key="cinnamoroll">
+      <span class="card-emoji">🐰</span>
+      <div class="card-name">Cinnamoroll</div>
+      <div class="card-desc">A fluffy white puppy born on a cloud. Always floating above reality, soft and dreamy.</div>
+      <div class="card-tags">
+        <span class="card-tag">Dreamy</span><span class="card-tag">Animal</span><span class="card-tag">Classic</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('cinnamoroll')">View Character →</a>
+        <button class="save-btn" id="save-cinnamoroll" onclick="toggleSave('cinnamoroll',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="cheerful animal classic" data-key="hellokitty">
+      <span class="card-emoji">🎀</span>
+      <div class="card-name">Hello Kitty</div>
+      <div class="card-desc">The iconic white cat with a red bow. Cheerful, warm, and endlessly optimistic.</div>
+      <div class="card-tags">
+        <span class="card-tag">Cheerful</span><span class="card-tag">Animal</span><span class="card-tag">Classic</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('hellokitty')">View Character →</a>
+        <button class="save-btn" id="save-hellokitty" onclick="toggleSave('hellokitty',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="calm animal modern" data-key="mymelody">
+      <span class="card-emoji">🌸</span>
+      <div class="card-name">My Melody</div>
+      <div class="card-desc">A sweet white rabbit in a pink hood. Gentle, kind, and always caring for others.</div>
+      <div class="card-tags">
+        <span class="card-tag">Calm</span><span class="card-tag">Animal</span><span class="card-tag">Modern</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('mymelody')">View Character →</a>
+        <button class="save-btn" id="save-mymelody" onclick="toggleSave('mymelody',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="dreamy fantasy modern" data-key="ttwinstars">
+      <span class="card-emoji">⭐</span>
+      <div class="card-name">Little Twin Stars</div>
+      <div class="card-desc">Twin star children from the Milky Way. Magical, dreamy, and always together.</div>
+      <div class="card-tags">
+        <span class="card-tag">Dreamy</span><span class="card-tag">Fantasy</span><span class="card-tag">Modern</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('ttwinstars')">View Character →</a>
+        <button class="save-btn" id="save-ttwinstars" onclick="toggleSave('ttwinstars',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="cheerful food modern" data-key="pompompurin">
+      <span class="card-emoji">🍮</span>
+      <div class="card-name">Pompompurin</div>
+      <div class="card-desc">A golden retriever who loves pudding and napping. Cozy, cheerful, and easygoing.</div>
+      <div class="card-tags">
+        <span class="card-tag">Cheerful</span><span class="card-tag">Food</span><span class="card-tag">Modern</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('pompompurin')">View Character →</a>
+        <button class="save-btn" id="save-pompompurin" onclick="toggleSave('pompompurin',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="calm animal classic" data-key="keroppi">
+      <span class="card-emoji">🐸</span>
+      <div class="card-name">Keroppi</div>
+      <div class="card-desc">A cheerful frog from Donut Pond. Adventurous, curious, and loves singing with friends.</div>
+      <div class="card-tags">
+        <span class="card-tag">Calm</span><span class="card-tag">Animal</span><span class="card-tag">Classic</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('keroppi')">View Character →</a>
+        <button class="save-btn" id="save-keroppi" onclick="toggleSave('keroppi',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="calm food modern" data-key="gudetama">
+      <span class="card-emoji">🥚</span>
+      <div class="card-name">Gudetama</div>
+      <div class="card-desc">A lazy egg yolk who loves to sleep and eat. Relatable, laid-back, always looking for the easiest way.</div>
+      <div class="card-tags">
+        <span class="card-tag">Calm</span><span class="card-tag">Food</span><span class="card-tag">Modern</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('gudetama')">View Character →</a>
+        <button class="save-btn" id="save-gudetama" onclick="toggleSave('gudetama',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="cheerful animal modern" data-key="aggretsuko">
+      <span class="card-emoji">🦊</span>
+      <div class="card-name">Aggretsuko</div>
+      <div class="card-desc">A red panda office worker who relieves stress by singing death metal. Relatable and full of hidden energy.</div>
+      <div class="card-tags">
+        <span class="card-tag">Cheerful</span><span class="card-tag">Animal</span><span class="card-tag">Modern</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('aggretsuko')">View Character →</a>
+        <button class="save-btn" id="save-aggretsuko" onclick="toggleSave('aggretsuko',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="dreamy animal modern" data-key="chococat">
+      <span class="card-emoji">🐱</span>
+      <div class="card-name">Chococat</div>
+      <div class="card-desc">A black cat with chocolate-colored paws and a tail that looks like a chocolate chip. Sweet and playful.</div>
+      <div class="card-tags">
+        <span class="card-tag">Dreamy</span><span class="card-tag">Animal</span><span class="card-tag">Modern</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('chococat')">View Character →</a>
+        <button class="save-btn" id="save-chococat" onclick="toggleSave('chococat',event)">♡</button>
+      </div>
+    </div>
+
+    <div class="card" data-tags="cheerful animal classic" data-key="badtzmaru">
+      <span class="card-emoji">🐧</span>
+      <div class="card-name">Badtz-Maru</div>
+      <div class="card-desc">A mischievous penguin with a bad attitude. Sassy, cool, and always up to something.</div>
+      <div class="card-tags">
+        <span class="card-tag">Cheerful</span><span class="card-tag">Animal</span><span class="card-tag">Classic</span>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" onclick="openDetail('badtzmaru')">View Character →</a>
+        <button class="save-btn" id="save-badtzmaru" onclick="toggleSave('badtzmaru',event)">♡</button>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- SAVED PAGE -->
+<div class="saved-page" id="saved-page">
+  <div class="saved-title">Saved Characters</div>
+  <div class="saved-subtitle">Characters you've collected. These become the basis of your gift.</div>
+  <div class="saved-grid" id="saved-grid">
+    <div class="empty-saved">
+      <div class="empty-saved-emoji">♡</div>
+      <div>No characters saved yet.<br>Browse the archive and save your favourites.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="about-page" id="about-page">
+  <div class="about-title">About the <em>Archive</em></div>
+  <div class="about-body">
+    <p>The Sanrio Character Archive is a resource dedicated to documenting the emotional universe of Sanrio's characters. Each character carries its own mood, personality, and way of being in the world.</p>
+    <p>This project began as a way to explore how character design communicates feeling — how a round shape, a soft colour, or a specific accessory can evoke comfort, joy, or nostalgia.</p>
+    <p>The archive is organized by mood, type, and era. Browse to discover characters that resonate with you, and save the ones that feel meaningful.</p>
+    <p><em>During testing, feedback revealed that users didn't just want to browse — they wanted to interact, collect, and build something personal. This insight led to a significant shift: moving from a static archive toward an interactive emotional experience where characters become the building blocks of a digital gift. That evolution became Memory Gift Atelier.</em></p>
+  </div>
+</div>
+
+<!-- DETAIL OVERLAY -->
+<div class="detail-overlay" id="detail-overlay" onclick="closeDetail(event)">
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-top">
+      <div class="detail-emoji-large" id="d-emoji"></div>
+      <div class="detail-top-info">
+        <div class="detail-top-label">Sanrio Character</div>
+        <div class="detail-name" id="d-name"></div>
+        <div class="detail-mood-tags" id="d-mood-tags"></div>
+      </div>
+      <button class="detail-close" onclick="closeDetail()">✕</button>
+    </div>
+    <div class="detail-body">
+      <p id="d-desc1"></p>
+      <p id="d-desc2"></p>
+      <div class="detail-vibe">
+        <div class="detail-vibe-label">Good for</div>
+        <div class="detail-vibe-tags" id="d-vibe-tags"></div>
+      </div>
+    </div>
+    <div class="detail-footer">
+      <div class="detail-meta">
+        <div class="meta-item">
+          <span class="meta-label">Mood</span>
+          <span class="meta-value" id="d-mood"></span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Debut</span>
+          <span class="meta-value" id="d-debut"></span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Type</span>
+          <span class="meta-value" id="d-type"></span>
+        </div>
+      </div>
+      <button class="detail-save-btn" id="d-save-btn" onclick="toggleSaveFromDetail()">♡ Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
