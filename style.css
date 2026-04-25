@@ -52,7 +52,6 @@ nav a:hover, nav a.active { color: var(--white); }
   font-weight: 700 !important;
 }
 
-/* HERO */
 .hero {
   background: var(--ink);
   padding: 56px 40px 48px;
@@ -76,7 +75,6 @@ nav a:hover, nav a.active { color: var(--white); }
 .hero-count-num { font-family: 'Playfair Display', serif; font-size: 72px; color: rgba(255,255,255,0.08); line-height: 1; }
 .hero-count-label { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 2px; text-transform: uppercase; }
 
-/* FILTER */
 .filter-wrap {
   background: var(--white);
   border-bottom: 1px solid var(--sand);
@@ -109,7 +107,6 @@ nav a:hover, nav a.active { color: var(--white); }
 .pill:hover { border-color: var(--pink); color: var(--pink-deep); }
 .pill.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
 
-/* CARDS */
 .archive { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--sand); border-top: 1px solid var(--sand); }
 
 .card { background: var(--cream); padding: 28px; cursor: pointer; transition: all 0.2s; }
@@ -131,7 +128,6 @@ nav a:hover, nav a.active { color: var(--white); }
 }
 .save-btn:hover, .save-btn.saved { background: var(--pink-light); border-color: var(--pink); color: var(--pink-deep); }
 
-/* DETAIL OVERLAY */
 .detail-overlay { display: none; position: fixed; inset: 0; background: rgba(42,26,32,0.5); z-index: 200; backdrop-filter: blur(4px); }
 .detail-overlay.visible { display: flex; align-items: center; justify-content: center; padding: 40px; }
 
@@ -168,7 +164,6 @@ nav a:hover, nav a.active { color: var(--white); }
 .detail-save-btn:hover { background: var(--pink-deep); }
 .detail-save-btn.saved { background: var(--pink); color: var(--ink); }
 
-/* SAVED PAGE */
 .saved-page { display: none; padding: 40px; max-width: 900px; }
 .saved-page.visible { display: block; }
 .saved-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--ink); margin-bottom: 8px; }
@@ -182,7 +177,6 @@ nav a:hover, nav a.active { color: var(--white); }
 .empty-saved { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14px; line-height: 1.8; }
 .empty-saved-emoji { font-size: 40px; margin-bottom: 16px; }
 
-/* ABOUT PAGE */
 .about-page { display: none; padding: 40px; max-width: 700px; }
 .about-page.visible { display: block; }
 .about-title { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--ink); margin-bottom: 24px; }
@@ -192,7 +186,6 @@ nav a:hover, nav a.active { color: var(--white); }
 
 .main-content.hidden { display: none; }
 
-/* RESPONSIVE */
 @media (max-width: 1024px) {
   .archive { grid-template-columns: repeat(2,1fr); }
   .saved-grid { grid-template-columns: repeat(2,1fr); }
