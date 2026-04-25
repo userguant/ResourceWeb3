@@ -182,7 +182,6 @@ nav a:hover, nav a.active { color: var(--white); }
 .about-title { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--ink); margin-bottom: 24px; }
 .about-title em { font-style: italic; color: var(--pink); }
 .about-body p { font-size: 15px; line-height: 1.85; color: #444; margin-bottom: 18px; }
-.about-body p em { font-style: italic; color: var(--pink-deep); }
 
 .main-content.hidden { display: none; }
 
