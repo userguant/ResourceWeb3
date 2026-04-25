@@ -27,7 +27,6 @@ body {
   min-height: 100vh;
 }
 
-/* ── HEADER ── */
 header {
   background: var(--ink);
   padding: 0 40px;
@@ -137,7 +136,6 @@ nav a:hover, nav a.active { color: var(--white); }
   text-transform: uppercase;
 }
 
-/* ── FILTER ── */
 .filter-wrap {
   background: var(--white);
   border-bottom: 1px solid var(--sand);
@@ -183,7 +181,6 @@ nav a:hover, nav a.active { color: var(--white); }
 .pill:hover { border-color: var(--pink); color: var(--pink-deep); }
 .pill.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
 
-/* ── GRID ── */
 .archive {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -271,7 +268,6 @@ nav a:hover, nav a.active { color: var(--white); }
   color: var(--pink-deep);
 }
 
-/* ── DETAIL PANEL ── */
 .detail-overlay {
   display: none;
   position: fixed;
@@ -441,7 +437,6 @@ nav a:hover, nav a.active { color: var(--white); }
 .detail-save-btn:hover { background: var(--pink-deep); }
 .detail-save-btn.saved { background: var(--pink); color: var(--ink); }
 
-/* ── SAVED PAGE ── */
 .saved-page {
   display: none;
   padding: 40px;
@@ -513,7 +508,6 @@ nav a:hover, nav a.active { color: var(--white); }
 
 .empty-saved-emoji { font-size: 48px; margin-bottom: 12px; }
 
-/* ── ABOUT PAGE ── */
 .about-page {
   display: none;
   max-width: 640px;
@@ -550,19 +544,16 @@ nav a:hover, nav a.active { color: var(--white); }
   font-style: italic;
 }
 
-/* ── HIDDEN ── */
 .main-content.hidden { display: none; }
 .saved-page, .about-page { opacity: 0; transition: opacity 0.3s ease; }
 .saved-page.visible, .about-page.visible { opacity: 1; }
 
-/* ── TABLET ── */
 @media (max-width: 1024px) {
   .archive { grid-template-columns: repeat(2, 1fr); }
   .saved-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-count { font-size: 60px; }
 }
 
-/* ── MOBILE ── */
 @media (max-width: 640px) {
   header { padding: 0 16px; }
   .logo { font-size: 15px; }
@@ -579,7 +570,6 @@ nav a:hover, nav a.active { color: var(--white); }
   .nav-saved { padding: 4px 10px; font-size: 11px; }
 }
 
-/* ── SMALL MOBILE ── */
 @media (max-width: 360px) {
   nav a { margin-left: 10px; }
   .hero-title { font-size: 28px; }
@@ -599,7 +589,6 @@ nav a:hover, nav a.active { color: var(--white); }
   </nav>
 </header>
 
-<!-- MAIN: ARCHIVE -->
 <div class="main-content" id="main-content">
 
   <div class="hero">
@@ -794,7 +783,6 @@ nav a:hover, nav a.active { color: var(--white); }
   </section>
 </div>
 
-<!-- SAVED PAGE -->
 <div class="saved-page" id="saved-page">
   <div class="saved-title">Saved Characters</div>
   <div class="saved-subtitle">Characters you've collected. These become the basis of your gift.</div>
@@ -806,16 +794,12 @@ nav a:hover, nav a.active { color: var(--white); }
   </div>
 </div>
 
-<!-- ABOUT PAGE -->
 <div class="about-page" id="about-page">
   <div class="about-title">About the <em>Archive</em></div>
   <div class="about-body">
-    <p>The Sanrio Character Archive is a resource dedicated to documenting the rich emotional universe of Sanrio's characters. Each character carries its own mood, personality, and way of being in the world.</p>
-    <p>This project began as a way to explore how character design communicates feeling — how a round shape, a soft color, or a specific accessory can evoke comfort, joy, or nostalgia.</p>
-    <p>During testing, something became clear: users didn't just want to browse characters. They wanted to interact with them — to collect the ones that resonated, to build something personal. The "Save" feature was the first sign of this shift.</p>
-    <div class="about-note">
-      This archive is the draft phase of the project. The final version — Memory Gift Atelier — evolved directly from what was learned here: that characters aren't just reference entries. They're emotional building blocks for a gift.
-    </div>
+    <p>The Sanrio Character Archive is a resource dedicated to documenting the emotional universe of Sanrio's characters. Each character carries its own mood, personality, and way of being in the world.</p>
+    <p>This project began as a way to explore how character design communicates feeling — how a round shape, a soft colour, or a specific accessory can evoke comfort, joy, or nostalgia.</p>
+    <p>The archive is organized by mood, type, and era. Browse to discover characters that resonate with you, and save the ones that feel meaningful.</p>
   </div>
 </div>
 
